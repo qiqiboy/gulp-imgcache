@@ -24,15 +24,19 @@ var imgcache = function(name) {
         // tell the stream engine that we are done with this file
         cb();
     }, function(cb){
-        var file=new gutil.File;
+        var file=new gutil.File,
+            json=JSON.stringify(imgs.map(function(img){
+                var path=img.path.replace(process.cwd(),'');
+                if(win32){
+                    path=path.replace(/\\/g,'/');
+                }
+                return path.replace(/^\//,'');
+            }));
+
         file.path=(name||'cache')+'.json';
-        file.contents=new Buffer(JSON.stringify(imgs.map(function(img){
-            var path=img.path.replace(process.cwd(),'');
-            if(win32){
-                path=path.replace(/\\/g,'/');
-            }
-            return path.replace(/^\//,'');
-        })));
+        file.contents=new Buffer(json);
+
+        gutil.log('Create '+file.path+': '+gutil.colors.green(json));
 
         this.push(file);
         // tell the stream engine that we are done with this file
