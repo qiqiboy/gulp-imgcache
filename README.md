@@ -27,6 +27,8 @@ gulp.task('cache', function () {
 
 ##Output
 ```js
+生成的文件中内容示例：
+
 [
 	"images/1712640.jpg",
 	"images/IMG_5196.jpg",
