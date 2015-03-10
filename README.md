@@ -37,4 +37,4 @@ Type: `string`
 
 ## License
 
-MIT © [Sindre Sorhus](http://sindresorhus.com)
+MIT © [qiqiboy](http://www.qiqiboy.com/)
