@@ -1,0 +1,24 @@
+{
+  "name": "gulp-imgcache",
+  "version": "1.0.3",
+  "description": "将读取的文件路径整理成json",
+  "main": "./index.js",
+  "license": "MIT",
+  "dependencies": {
+    "through2": "*",
+	"gulp-util": "*"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/qiqiboy/gulp-imgcache.git"
+  },
+  "keywords": [
+    "gulpplugin",
+    "imgcache",
+	"image-paths"
+  ],
+  "author": {
+    "name": "qiqiboy",
+    "email": "imqiqiboy@gmail.com"
+  }
+}
