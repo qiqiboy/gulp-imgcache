@@ -25,7 +25,7 @@ gulp.task('cache', function () {
 });
 ```
 
-##Output
+## Output
 ```js
 /* 生成的文件中内容示例：*/
 
