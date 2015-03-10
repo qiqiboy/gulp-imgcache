@@ -25,6 +25,18 @@ gulp.task('cache', function () {
 });
 ```
 
+##Output
+```js
+[
+	"images/1712640.jpg",
+	"images/IMG_5196.jpg",
+	"images/IMG_5200.jpg",
+	"images/IMG_5201.jpg",
+	"images/IMG_5205.jpg",
+	"images/avatar/qiqiboy.jpg"
+]
+```
+
 ## API
 
 ### imgcache(name)
