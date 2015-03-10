@@ -9,12 +9,12 @@ var imgcache = function(name) {
 
     var stream = through.obj(function(file, enc, cb) {
         if (file.isNull()) {
-			cb(null, file);
-			return;
-		}
+            cb(null, file);
+            return;
+        }
 
         if (file.isStream()) {
-            this.emit('error', new PluginError('gulp-concat',  'Streaming not supported'));
+            this.emit('error', new gutil.PluginError('gulp-concat',  'Streaming not supported'));
             cb();
             return;
         }
