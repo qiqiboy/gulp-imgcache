@@ -41,13 +41,20 @@ gulp.task('cache', function () {
 
 ## API
 
-### imgcache(name)
+### imgcache(name, jsVar)
 
 #### name
 
 Type: `string`
 
 生成的json文件的名称，默认为 ` "cache"` 。
+
+#### jsVar
+
+Type: `bool`, `string`
+
+如果为true，则将会生成 `var varName=[];` 的js文件，varName为参数name。如果jsVar是个字符串，则varName等于jsVar。
+
 
 ## License
 

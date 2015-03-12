@@ -5,7 +5,7 @@ var gutil = require('gulp-util');
 var imgs=[];
 var win32=process.platform=='win32';
 
-var imgcache = function(name) {
+var imgcache = function(name, jsVar) {
 
     var stream = through.obj(function(file, enc, cb) {
         if (file.isNull()) {
@@ -31,9 +31,17 @@ var imgcache = function(name) {
                     path=path.replace(/\\/g,'/');
                 }
                 return path.replace(/^\//,'');
-            }));
+            })),
+            varName;
 
-        file.path=(name||'cache')+'.json';
+        if(jsVar){
+            varName=typeof jsVar=='string'?jsVar:name;
+            json='var '+varName+'='+json+';';
+            file.path=name+'.js';
+        }else{
+            file.path=name+'.json';
+        }
+
         file.contents=new Buffer(json);
 
         gutil.log('Create '+file.path+': '+gutil.colors.green(json));
@@ -42,6 +50,8 @@ var imgcache = function(name) {
         // tell the stream engine that we are done with this file
         cb();
     });
+        
+    name=name||'cache';
 
     // returning the file stream
     return stream;

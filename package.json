@@ -1,6 +1,6 @@
 {
   "name": "gulp-imgcache",
-  "version": "1.0.8",
+  "version": "1.0.10",
   "description": "将从管道中读取的文件的路径打包整理成json文件输出",
   "main": "./index.js",
   "license": "MIT",
